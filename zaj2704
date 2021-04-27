@@ -1,1 +1,24 @@
+import math as m
 
+a = m.sqrt((B[0]-A[0])**2+(B[1]-A[1])**2)
+b = m.sqrt((C[0]-B[0])**2+(C[1]-B[1])**2)
+c = m.sqrt((A[0]-C[0])**2+(A[1]-C[1])**2)
+
+def czy_to_trojkat(a,b,c):
+    if a+b > c and b+c > a and c+a > b:
+        return True
+    else:
+        return False
+    
+def pole(A,B,C):
+    if (czy_to_trojkat(a,b,c)):
+        p = (1/2)*(m.fabs((B[0]-A[0])*(C[1]-A[1])-(B[1]-A[1])*(C[0]-A[0])))
+        print('Pole wynosi:', p)
+    else:
+        print('To nie jest trojkat.')
+        
+A = [4, 3]
+B = [3, 5]
+C = [7, 0]
+
+pole(A,B,C)
